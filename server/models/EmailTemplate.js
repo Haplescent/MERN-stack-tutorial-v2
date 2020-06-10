@@ -26,15 +26,15 @@ function insertTemplates() {
   const templates = [
     {
       name: "welcome",
-      subject: "Welcome to builderbook.org",
+      subject: "Welcome to my MERN-stack-tutorial",
       message: `<%= userName %>,
         <p>
-          Thanks for signing up for Builder Book!
+          Thanks for signing up for my MERN-stack-tutorial!
         </p>
         <p>
-          In our books, we teach you how to build complete, production-ready web apps from scratch.
+          This website is a test to see if you can get welcome messages for joining my full stack app.
         </p>
-        Kelly & Timur, Team Builder Book
+        John Merritt
       `,
     },
   ];

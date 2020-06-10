@@ -3,6 +3,8 @@ import { ThemeProvider } from "@material-ui/styles";
 import App from "next/app";
 import React from "react";
 
+import Notifier from "../components/Notifier";
+
 import { theme } from "../lib/theme";
 
 import Header from "../components/Header";
@@ -47,6 +49,7 @@ class MyApp extends App {
         <CssBaseline />
         <Header {...pageProps} />
         <Component {...pageProps} />
+        <Notifier />
       </ThemeProvider>
     );
   }
