@@ -1,6 +1,10 @@
 const express = require("express");
 const next = require("next");
 
+const { insertTemplates } = require("./models/EmailTemplate");
+
+const logger = require("./logs");
+
 const mongoose = require("mongoose");
 
 const session = require("express-session");
@@ -28,7 +32,7 @@ const ROOT_URL = `http://localhost:${port}`;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-app.prepare().then(() => {
+app.prepare().then(async () => {
   const server = express();
 
   const MongoStore = mongoSessionStore(session);
@@ -50,12 +54,14 @@ app.prepare().then(() => {
 
   server.use(session(sess));
 
+  await insertTemplates();
+
   auth({ server, ROOT_URL });
 
   server.get("*", (req, res) => handle(req, res));
 
   server.listen(port, (err) => {
     if (err) throw err;
-    console.log(`> Ready on ${ROOT_URL}`); // eslint-disable-line no-console
+    logger.info(`> Ready on ${ROOT_URL}`);
   });
 });
