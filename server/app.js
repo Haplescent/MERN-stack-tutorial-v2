@@ -12,6 +12,8 @@ const mongoSessionStore = require("connect-mongo");
 
 const auth = require("./google");
 
+const Chapter = require("./models/Chapter");
+
 require("dotenv").config();
 
 const dev = process.env.NODE_ENV !== "production";
