@@ -15,7 +15,7 @@
   "dependencies": {
     "@material-ui/core": "4.8.0",
     "@material-ui/styles": "4.7.1",
-    "aws-sdk": "2.595.0",
+    "aws-sdk": "2.814.0",
     "connect-mongo": "3.2.0",
     "dotenv": "8.2.0",
     "email-addresses": "3.1.0",
